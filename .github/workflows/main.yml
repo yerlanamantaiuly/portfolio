@@ -10,6 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: test all secrets
+      run: |
+        echo "${{ secrets.SSH_PRIVATE_KEY }}"
+        echo "${{ secrets.SSH_USER }}"
+        echo "${{ secrets.SSH_HOST }}"
+        echo "${{ secrets.WORK_DIR }}"
+        echo "${{ secrets.MAIN_BRANCH }}"
     - name: install ssh keys
       # check this thread to understand why its needed:
       # https://stackoverflow.com/a/70447517
